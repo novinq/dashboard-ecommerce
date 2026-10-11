@@ -101,7 +101,7 @@ def create_rfm_df(df, recent_date):
 # st.cache_data menyimpan hasil pembacaan agar data tidak dibaca ulang setiap filter diubah
 @st.cache_data
 def load_data():
-    df = pd.read_csv(Path(__file__).parent / "all_data.csv")
+    df = pd.read_csv(Path(__file__).parent / "all_data.zip")
     df["order_purchase_timestamp"] = pd.to_datetime(df["order_purchase_timestamp"])
     df.sort_values(by="order_purchase_timestamp", inplace=True)
     df.reset_index(drop=True, inplace=True)
